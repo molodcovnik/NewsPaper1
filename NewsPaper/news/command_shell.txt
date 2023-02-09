@@ -1,0 +1,110 @@
+from news.models import *
+
+#создаем юзеров
+u1 = User.objects.create_user('Nikolai')
+u2 = User.objects.create_user('Alex')
+
+#делаем юзеров авторами
+Author.objects.create(authorUser=u1)
+Author.objects.create(authorUser=u2)
+
+#добавляем 4 категории
+Category.objects.create(name_category='IT')
+Category.objects.create(name_category='Sport')
+Category.objects.create(name_category='Political')
+Category.objects.create(name_category='Health')
+
+#автор1 делает пост и присваивает ему категории
+author1 = Author.objects.all()    
+a1 = author1[0]
+
+Post.objects.create(author=a1, category_type='NEWS', header_post = 'Биткоин упал на дно', text = 'Биткоин в течени
+и 2022 года упал более чем на 70%, но не смотря на это некоторые страны принимают его в качестве официального средства
+ платежа')
+
+Post.objects.get(id=1).category_post.add(Category.objects.get(id=1))
+Post.objects.get(id=1).category_post.add(Category.objects.get(id=3))
+
+#автор2 делает пост и присваивает ему категории
+a2 = author1[1]
+
+Post.objects.create(author = a2, category_type= 'ART', header_post= 'Финал ЧМ по футболу', text = ' Это был жаркий
+ матч!!! Команды бились из последних сил, но Аргентина оказалась сильнее! Месси победил!')
+
+Post.objects.get(id=2).category_post.add(Category.objects.get(id=2))
+
+#автор1 делает пост и присваивает ему категории
+Post.objects.create(author=a1, category_type = 'ART', header_post = 'Мобилизация', text = 'В России объявлена моби
+лизация!')
+
+Post.objects.get(id=3).category_post.add(Category.objects.get(id=3))
+
+#делаем комменты
+Comment.objects.create(comment_post= Post.objects.get(id=1), comment_user = Author.objects.get(id=2).authorUser, text_comment = 
+'Класс!!!')
+
+Comment.objects.create(comment_post= Post.objects.get(id=2), comment_user = Author.objects.get(id=1).authorUser, text_comment = 
+'Все равно Криш лучший!')
+
+Comment.objects.create(comment_post= Post.objects.get(id=3), comment_user = Author.objects.get(id=2).authorUser, text_comment = 
+'Жесть')
+
+Comment.objects.create(comment_post= Post.objects.get(id=2), comment_user = Author.objects.get(id=2).authorUser, text_comment = 
+'Месси чемпион!!!')
+
+#лайкаем/дизлайкаем
+Post.objects.get(id=1).like()
+
+b=Post.objects.all() 
+b
+post2 = b[1]
+post2.like()
+post1 = b[0]
+post1.like()
+post2.dislike()
+post3 = b[2]
+post3.like()
+post3.dislike()
+post3.dislike()
+post3.dislike()
+post2.like()
+
+c = Comment.objects.all()
+c[0].like()
+c[1].like()
+c[1].dislike()
+c[2].dislike()
+c[3].like()
+c[1].like()
+
+#обновляем рейтинги
+s= Author.objects.all()
+s[0].update_rating()
+s[1].update_rating()
+
+#username и рейтинг лучшего пользователя
+Author.objects.all().order_by('-ratingAuthor').values('authorUser', 'ratingAuthor')[0]
+User.objects.get(id=2)
+или
+g = Author.objects.all().order_by('-ratingAuthor')[0]
+g.authorUser
+g.ratingAuthor
+
+#выводим превью
+p.preview()
+
+#выводим дату, юзернейм, рейтинг, заголовок лучшего поста
+bb = Post.objects.order_by('-rating_post')[0]
+bb.time_add
+bb.author.authorUser.username
+bb.header_post
+bb.rating_post
+
+#все комменты к лучшей статье
+Comment.objects.filter(comment_post=2)
+com = Comment.objects.filter(comment_post=2)
+for i in com:
+     i.time_comment
+     i.comment_user.username
+     i.rating_comment 
+     i.text_comment
