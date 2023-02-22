@@ -9,4 +9,5 @@ Post
 <h1>{{ post.header_post }}</h1>
 <h3>Дата публикации: {{post.time_add|date:'d m Y'}}</h3>
 <p>{{post.text}}</p>
+<a href="{%url 'post_list'%}">Назад</a>
 {% endblock content %}
