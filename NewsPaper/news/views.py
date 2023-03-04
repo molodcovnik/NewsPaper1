@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group, User
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.decorators.csrf import csrf_protect
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView
 )
-from .models import Post
+from .models import Post, Author, Category, PostCategory
 from .filters import PostFilter
 from .forms import PostForm
 from django.urls import reverse_lazy
@@ -15,6 +18,11 @@ class PostList(ListView):
     template_name = 'posts.html'
     context_object_name = 'posts'
     paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_author'] = self.request.user.groups.filter(name='authors').exists()
+        return context
 
 
 class PostDetail(DetailView):
@@ -59,3 +67,49 @@ class PostDelete(PermissionRequiredMixin, DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('post_list')
+
+
+@login_required
+def get_author_status(request):
+    user = request.user
+    authors = Group.objects.get(name='authors')
+    if not request.user.groups.filter(name='authors').exists():
+        authors.user_set.add(user)
+
+    Author.objects.create(authorUser=User.objects.get(pk=user.id))
+    return redirect('/news')
+
+
+class CategoryListView(ListView):
+    model = Post
+    template_name = 'category_list.html'
+    context_object_name = 'category_news_list'
+
+    def get_queryset(self):
+        self.category_post = get_object_or_404(Category, id=self.kwargs['pk'])
+        queryset = Post.objects.filter(category_post=self.category_post).order_by('-time_add')
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_not_subscriber'] = self.request.user not in self.category_post.subscribers.all()
+        context['category'] = self.category_post
+        return context
+
+@login_required
+def subscribe(request, pk):
+    user = request.user
+    category = Category.objects.get(id=pk)
+    category.subscribers.add(user)
+
+    message = 'Вы успешно подписались на рассылку новостей'
+    return render(request, 'subscribe.html', {'category': category, 'message': message})
+
+@login_required
+def unsubscribe(request, pk):
+    user = request.user
+    category = Category.objects.get(id=pk)
+    category.subscribers.remove(user)
+
+    message = 'Вы успешно отписались от рассылки новостей'
+    return render(request, 'unsubscribe.html', {'category': category, 'message': message})

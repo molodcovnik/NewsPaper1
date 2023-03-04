@@ -1,0 +1,79 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+Subscribe
+{% endblock title %}
+
+{% block content %}
+    <h1> Все новости </h1>
+    <hr>
+    {% if is_not_subscriber %}
+    <p class="text-center"><a href="{% url 'subscribe' category.id %}" class="btn btn-secondary btn-sm">Подписаться</a> </p>
+    {% else %}
+    <p class="text-center"><a href="{% url 'unsubscribe' category.id %}" class="btn btn-secondary btn-sm">Отписаться</a> </p>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <p>User: <strong>{{ user.get_username }}</strong></p>
+        <p class="text-left"><a href="/accounts/logout" class="btn btn-secondary btn-sm">Выйти</a></p>
+    {% else %}
+        <li>User: <strong>Гость</strong></li>
+        <li><a href="/accounts/login">Войти</a></li>
+    {% endif %}
+    <hr>
+    <p class="text-left"><a href="{% url 'post_search' %}" class="btn btn-secondary btn-sm">Поиск</a></p>
+    {% if perms.news.add_post %}
+    <p class="text-left"><a href="{% url 'post_create' %}" class="btn btn-secondary btn-sm">Добавить пост</a></p>
+    {% endif %}
+
+        <table>
+            <tr>
+                <td><h4>Заголовок</h4></td>
+                <td><h4>Категории</h4></td>
+                <td><h4 align="center">Дата публикации</h4></td>
+                <td><h4 align="center">Превью статьи</h4></td>
+                {% if perms.news.change_post or perms.news.delete_post %}
+                <td><h4>Действия</h4></td>
+                {% endif %}
+            </tr>
+            {% for post in category_news_list %}
+                <tr>
+                    <td><h6>{{post.header_post|censor}}</h6></td>
+                    <td>{% for category in post.category_post.all %}
+                            <a href="{% url 'category_list' category.id %}"> {{category}}</a>
+                        {% endfor %}</td>
+                    <td align="center">{{post.time_add|date:'d.m.Y'}}</td>
+                    <td>{{post.text|truncatewords:20|censor}}</td>
+                    <td><a href="{% url 'post_detail' pk=post.id %}">Читать</a></td>
+                    <td>
+                    {% if perms.news.change_post %}
+                    <a href="{% url 'post_edit' pk=post.id %}">Изменить</a>
+                    {% endif %}
+                    {% if perms.news.delete_post %}
+                    <a href="{% url 'post_delete' post.id %}">Удалить</a>
+                    {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% if page_obj.has_previous %}
+        <a href="?page=1">1</a>
+        {%if page_obj.previous_page_number != 1%}
+            ...
+            <a href="?page={{page_obj.previous_page_number}}">{{ page_obj.previous_page_number }}</a>
+        {%endif%}
+    {%endif%}
+
+    {{page_obj.number}}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}" > {{ page_obj.next_page_number }}</a>
+        {% if paginator.num_pages != page_obj.next_page_number %}
+            ...
+            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+        {% endif %}
+    {% endif %}
+
+{% endblock content %}

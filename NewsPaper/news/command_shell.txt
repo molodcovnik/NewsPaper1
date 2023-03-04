@@ -113,3 +113,6 @@ Post.objects.create(author=a1, category_type='ART', header_post='Валиева 
 про ОИ', text='14 января Российское антидопинговое агентство лишило Валиеву золотой меда
 ли чемпионата России-2022. При этом организация проинформировала Всемирное антидопингово
 е агентство о том, что спортсменка не нарушала антидопинговые правила.')
+
+
+posts = Post.objects.filter(time_add__gte=last_week, category_post=1).values('header_post')
