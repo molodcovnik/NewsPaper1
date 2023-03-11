@@ -9,5 +9,22 @@ Post
 <h1>{{ post.header_post }}</h1>
 <h3>Дата публикации: {{post.time_add|date:'d m Y'}}</h3>
 <p>{{post.text}}</p>
-<a href="{%url 'post_list'%}">Назад</a>
+<hr>
+{% if user.is_authenticated%}
+    <h4>Комментарии:</h4>
+    <p class="text-left"><a href="{%url 'comment_create' post.id %}" class="btn btn-secondary btn-sm>">Комментировать</a></p>
+    {% if comments %}
+        {% for comment in comments %}
+            <p><strong>Пользователь: {{ comment.comment_user}}</strong></p>
+            <p>Комментарий:</p>
+            <p>{{ comment.text_comment}} </p>
+            <p>Рейтинг: <strong>{{ comment.rating_comment}}</strong> </p>
+            <p><strong>Время: {{comment.time_comment|date:'d-m-Y H:i'}}</strong></p>
+<hr>
+        {% endfor %}
+    {% else %}
+    <h4>Комментариев нет...</h4>
+    {% endif %}
+{% endif %}
+<p class="text-left"><a href="{%url 'post_list'%}" class="btn btn-secondary btn-sm>">Назад</a></p>
 {% endblock content %}

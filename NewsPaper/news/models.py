@@ -76,6 +76,9 @@ class Comment(models.Model):
     time_comment = models.DateTimeField(auto_now_add=True)
     rating_comment = models.SmallIntegerField(default=0)
 
+    def __str__(self):
+        return {self.text_comment}, {self.comment_user}, {self.time_comment}
+
     def like(self):
         self.rating_comment += 1
         self.save()
@@ -83,6 +86,9 @@ class Comment(models.Model):
     def dislike(self):
         self.rating_comment -= 1
         self.save()
+
+    def get_absolute_url(self):
+        return reverse('comment_create', args=[str(self.id)])
 
 
 class PostCategory(models.Model):

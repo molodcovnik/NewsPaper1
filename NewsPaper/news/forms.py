@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, User
+from .models import Post, Comment
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -11,3 +11,19 @@ class PostForm(forms.ModelForm):
             'header_post',
             'text',
         ]
+
+
+class CommentForm(forms.ModelForm):
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['comment_post'].disabled = True
+    #     self.fields['comment_user'].disabled = True
+    class Meta:
+        model = Comment
+        fields = [
+            'comment_post',
+            'comment_user',
+            'text_comment',
+        ]
+
+

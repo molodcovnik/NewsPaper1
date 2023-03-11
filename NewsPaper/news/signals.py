@@ -3,28 +3,9 @@ from django.core.mail import EmailMultiAlternatives
 from django.db.models.signals import m2m_changed
 from django.dispatch import receiver
 from django.template.loader import render_to_string
-
+from django.contrib.auth.models import User
 from .models import PostCategory
-
-
-def send_notifications(preview, pk, header_post, subscribers):
-    html_content = render_to_string(
-        'post_created_email.html',
-        {
-            'text': preview,
-            'link': f'{settings.SITE_URL}/news/{pk}',
-        }
-    )
-
-    msg = EmailMultiAlternatives(
-        subject=header_post,
-        body='',
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        to=subscribers,
-    )
-
-    msg.attach_alternative(html_content, 'text/html')
-    msg.send()
+from .tasks import send_notifications
 
 @receiver(m2m_changed, sender=PostCategory)
 def notify_about_new_post(sender, instance, **kwargs):
@@ -36,4 +17,4 @@ def notify_about_new_post(sender, instance, **kwargs):
 
         subscribers = [s.email for s in subscribers]
 
-        send_notifications(instance.preview(), instance.pk, instance.header_post, subscribers)
+        send_notifications.delay(instance.preview(), instance.pk, instance.header_post, subscribers)

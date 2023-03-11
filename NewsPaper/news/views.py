@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
 from django.shortcuts import render, redirect, get_object_or_404
@@ -6,9 +8,9 @@ from django.views.decorators.csrf import csrf_protect
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView
 )
-from .models import Post, Author, Category, PostCategory
+from .models import Post, Author, Category, PostCategory, Comment
 from .filters import PostFilter
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
@@ -29,6 +31,12 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = Post.objects.get(id=self.kwargs['pk'])
+        context['comments'] = Comment.objects.filter(comment_post=post)
+        return context
 
 
 class PostSearch(ListView):
@@ -113,3 +121,27 @@ def unsubscribe(request, pk):
 
     message = 'Вы успешно отписались от рассылки новостей'
     return render(request, 'unsubscribe.html', {'category': category, 'message': message})
+
+
+class CommentCreate(LoginRequiredMixin, CreateView):
+    raise_exception = True
+    form_class = CommentForm
+    model = Comment
+    template_name = 'comment_create.html'
+    success_url = reverse_lazy('post_list')
+
+# def comment(request, pk):
+#     post = get_object_or_404(Post, id=pk)
+#     if request.method == 'POST':
+#         form = CommentForm(request.POST)
+#         if form.is_valid():
+#             comment = form.save(commit=False)
+#             comment.post = post
+#             comment.save()
+#
+#             return redirect ('post_list')
+#     else:
+#         user = request.user
+#         form = CommentForm(initial={"comment_post": post, "comment_user": user.username})
+#
+#         return render(request, 'comment_create.html', {'post': post, 'form': form})
