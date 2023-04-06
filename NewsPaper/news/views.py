@@ -2,9 +2,11 @@ import datetime
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
+from django.http import Http404, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.decorators.csrf import csrf_protect
+from django.views.generic.edit import FormMixin
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView
 )
@@ -27,10 +29,31 @@ class PostList(ListView):
         return context
 
 
-class PostDetail(DetailView):
+class PostDetail(FormMixin, DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
+    form_class = CommentForm
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('post_detail', kwargs={'pk':self.get_object().id})
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.comment_post = self.get_object()
+        self.object.comment_user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -123,25 +146,9 @@ def unsubscribe(request, pk):
     return render(request, 'unsubscribe.html', {'category': category, 'message': message})
 
 
-class CommentCreate(LoginRequiredMixin, CreateView):
-    raise_exception = True
-    form_class = CommentForm
-    model = Comment
-    template_name = 'comment_create.html'
-    success_url = reverse_lazy('post_list')
-
-# def comment(request, pk):
-#     post = get_object_or_404(Post, id=pk)
-#     if request.method == 'POST':
-#         form = CommentForm(request.POST)
-#         if form.is_valid():
-#             comment = form.save(commit=False)
-#             comment.post = post
-#             comment.save()
-#
-#             return redirect ('post_list')
-#     else:
-#         user = request.user
-#         form = CommentForm(initial={"comment_post": post, "comment_user": user.username})
-#
-#         return render(request, 'comment_create.html', {'post': post, 'form': form})
+# class CommentCreate(LoginRequiredMixin, CreateView):
+#     raise_exception = True
+#     form_class = CommentForm
+#     model = Comment
+#     template_name = 'comment_create.html'
+#     success_url = reverse_lazy('post_list')

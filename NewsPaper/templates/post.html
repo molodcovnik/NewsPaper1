@@ -12,14 +12,19 @@ Post
 <hr>
 {% if user.is_authenticated%}
     <h4>Комментарии:</h4>
-    <p class="text-left"><a href="{%url 'comment_create' post.id %}" class="btn btn-secondary btn-sm>">Комментировать</a></p>
+    <div class="col-1">
+        <form action="" id="add_comment" method="post">
+        {%csrf_token%}
+            {{form.as_p}}
+            </form>
+    </div>
+    <button form="add_comment" type="submit" class="btn btn-secondary">Добавить комментарий</button>
     {% if comments %}
         {% for comment in comments %}
-            <p><strong>Пользователь: {{ comment.comment_user}}</strong></p>
+            <p><strong>Пользователь: {{ comment.comment_user}} Время: {{comment.time_comment|date:'d-m-Y H:i'}}</strong></p>
             <p>Комментарий:</p>
             <p>{{ comment.text_comment}} </p>
             <p>Рейтинг: <strong>{{ comment.rating_comment}}</strong> </p>
-            <p><strong>Время: {{comment.time_comment|date:'d-m-Y H:i'}}</strong></p>
 <hr>
         {% endfor %}
     {% else %}

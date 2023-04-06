@@ -1,4 +1,6 @@
 from django import forms
+from django.forms import Textarea
+
 from .models import Post, Comment
 
 class PostForm(forms.ModelForm):
@@ -12,18 +14,16 @@ class PostForm(forms.ModelForm):
             'text',
         ]
 
-
 class CommentForm(forms.ModelForm):
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.fields['comment_post'].disabled = True
-    #     self.fields['comment_user'].disabled = True
     class Meta:
         model = Comment
         fields = [
-            'comment_post',
-            'comment_user',
             'text_comment',
         ]
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'form-control'
+        self.fields['text_comment'].widget = Textarea(attrs={'rows':5})
 
 
