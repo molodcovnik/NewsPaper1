@@ -14,7 +14,7 @@ Post
     <h4>Комментарии:</h4>
     <div class="col-1">
         <form action="" id="add_comment" method="post">
-        {%csrf_token%}
+            {%csrf_token%}
             {{form.as_p}}
             </form>
     </div>
@@ -23,7 +23,7 @@ Post
         {% for comment in comments %}
             <p><strong>Пользователь: {{ comment.comment_user}} Время: {{comment.time_comment|date:'d-m-Y H:i'}}</strong></p>
             <p>Комментарий:</p>
-            <p>{{ comment.text_comment}} </p>
+            <b>{{ comment.text_comment}} </b>
             <p>Рейтинг: <strong>{{ comment.rating_comment}}</strong> </p>
 <hr>
         {% endfor %}

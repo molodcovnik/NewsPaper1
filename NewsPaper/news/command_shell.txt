@@ -40,7 +40,7 @@ Post.objects.create(author=a1, category_type = 'ART', header_post = 'Мобил�
 Post.objects.get(id=3).category_post.add(Category.objects.get(id=3))
 
 #делаем комменты
-Comment.objects.create(comment_post= Post.objects.get(id=1), comment_user = Author.objects.get(id=2).authorUser, text_comment = 
+Comment.objects.create(comment_post= Post.objects.get(id=1), r = Author.objects.get(id=2).authorUser, text_comment =
 'Класс!!!')
 
 Comment.objects.create(comment_post= Post.objects.get(id=2), comment_user = Author.objects.get(id=1).authorUser, text_comment = 

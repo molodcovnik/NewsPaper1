@@ -24,6 +24,6 @@ class CommentForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
-        self.fields['text_comment'].widget = Textarea(attrs={'rows':5})
+        self.fields['text_comment'].widget = Textarea(attrs={'rows': 5})
 
 
