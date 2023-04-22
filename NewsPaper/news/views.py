@@ -20,23 +20,23 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 
 logger = logging.getLogger(__name__)
 
-def index(request):
-    logger.error('sa')
-    posts = Post.objects.all()
-
-    return render(request, 'posts.html', context={'posts': posts})
-
-# class PostList(ListView):
-#     model = Post
-#     ordering = '-time_add'
-#     template_name = 'posts.html'
-#     context_object_name = 'posts'
-#     paginate_by = 10
+# def index(request):
+#     logger.error('sa')
+#     posts = Post.objects.all()
 #
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['is_author'] = self.request.user.groups.filter(name='authors').exists()
-#         return context
+#     return render(request, 'posts.html', context={'posts': posts})
+
+class PostList(ListView):
+    model = Post
+    ordering = '-time_add'
+    template_name = 'posts.html'
+    context_object_name = 'posts'
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_author'] = self.request.user.groups.filter(name='authors').exists()
+        return context
 
 
 class PostDetail(FormMixin, DetailView):
