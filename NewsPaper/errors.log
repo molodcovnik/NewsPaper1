@@ -4058,3 +4058,1836 @@ Traceback (most recent call last):
     category = Category.objects.get(name_category=request.data['name_category'])
 KeyError: 'name_category'
 2023-09-26 11:49:33,864 ERROR "POST /api/posts/create/ HTTP/1.1" 500 111883 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:21:38,753 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option."), <traceback object at 0x000001BE4B53A080>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option.
+2023-10-07 13:21:38,775 ERROR "GET /api/subs/ HTTP/1.1" 500 147551 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:23:40,100 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'username'."), <traceback object at 0x000002BFC2C466C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'username'.
+2023-10-07 13:23:40,113 ERROR "GET /api/subs/ HTTP/1.1" 500 157306 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:24:10,120 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option."), <traceback object at 0x000001ECCC89CC00>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option.
+2023-10-07 13:24:10,134 ERROR "GET /api/subs/ HTTP/1.1" 500 148393 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:24:35,674 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'username'."), <traceback object at 0x000001E84CC8D0C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'username'.
+2023-10-07 13:24:35,690 ERROR "GET /api/subs/ HTTP/1.1" 500 148549 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:25:21,838 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("The field 'username' was declared on serializer StaticSerializer, but has not been included in the 'fields' option."), <traceback object at 0x000001F83E219F40>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'username' was declared on serializer StaticSerializer, but has not been included in the 'fields' option.
+2023-10-07 13:25:21,854 ERROR "GET /api/subs/ HTTP/1.1" 500 148457 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:25:34,137 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."), <traceback object at 0x0000026AC36E9C00>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."
+2023-10-07 13:25:34,155 ERROR "GET /api/subs/ HTTP/1.1" 500 143321 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:25:49,132 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."), <traceback object at 0x00000253919B35C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."
+2023-10-07 13:25:49,228 ERROR "GET /api/subs/ HTTP/1.1" 500 143402 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:25:50,726 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."), <traceback object at 0x0000025391CEE600>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."
+2023-10-07 13:25:50,726 ERROR "GET /api/subs/ HTTP/1.1" 500 143402 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:25:52,294 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."), <traceback object at 0x0000025391D00A80>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `username` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'username'."
+2023-10-07 13:25:52,305 ERROR "GET /api/subs/ HTTP/1.1" 500 143402 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:26:52,002 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'username'."), <traceback object at 0x000001F2B9A161C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'username'.
+2023-10-07 13:26:52,026 ERROR "GET /api/subs/ HTTP/1.1" 500 157306 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:26:53,550 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'username'."), <traceback object at 0x000001F2B998EA00>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'username'.
+2023-10-07 13:26:53,568 ERROR "GET /api/subs/ HTTP/1.1" 500 157306 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 13:29:15,581 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'username'."), <traceback object at 0x00000286E3832500>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'username'.
+2023-10-07 13:29:15,597 ERROR "GET /api/subs/ HTTP/1.1" 500 157464 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:10:35,465 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'username'."), <traceback object at 0x00000175D016EF80>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'username'.
+2023-10-07 14:10:35,482 ERROR "GET /api/subs/ HTTP/1.1" 500 157464 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:10:36,714 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'username'."), <traceback object at 0x00000175D0028680>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `username` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'username'.
+2023-10-07 14:10:36,716 ERROR "GET /api/subs/ HTTP/1.1" 500 157464 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:11:49,863 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x000001FFD54BBCC0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 14:11:49,874 ERROR "GET /api/subs/ HTTP/1.1" 500 128668 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:11:53,221 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x000001FFD532E380>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 14:11:53,221 ERROR "GET /api/subs/ HTTP/1.1" 500 128668 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:16:17,255 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option."), <traceback object at 0x00000238E48CA040>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 68, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option.
+2023-10-07 14:16:17,277 ERROR "GET /api/subs/ HTTP/1.1" 500 147107 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:16:32,023 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `users` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'users'."), <traceback object at 0x000001C2C10C4940>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 539, in get_attribute
+    relationship = get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'users'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 68, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 560, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `users` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'users'."
+2023-10-07 14:16:32,037 ERROR "GET /api/subs/ HTTP/1.1" 500 138804 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:17:19,375 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'str' object has no attribute 'pk'"), <traceback object at 0x000002463043D9C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 69, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 273, in to_representation
+    return value.pk
+AttributeError: 'str' object has no attribute 'pk'
+2023-10-07 14:17:19,507 ERROR "GET /api/subs/ HTTP/1.1" 500 138910 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:19:42,260 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.FieldError'>, FieldError("Cannot resolve keyword 'subscribers' into field. Choices are: author, categories, comment, date_joined, email, emailaddress, first_name, groups, id, is_active, is_staff, is_superuser, last_login, last_name, logentry, password, socialaccount, user_permissions, username"), <traceback object at 0x00000178C042ED40>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 65, in get
+    .annotate(users=Subquery(User.objects.filter(subscribers='name_category'))) \
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1439, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1446, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'subscribers' into field. Choices are: author, categories, comment, date_joined, email, emailaddress, first_name, groups, id, is_active, is_staff, is_superuser, last_login, last_name, logentry, password, socialaccount, user_permissions, username
+2023-10-07 14:19:42,276 ERROR "GET /api/subs/ HTTP/1.1" 500 144067 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:20:12,678 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'name_category'."), <traceback object at 0x0000028E8BE1CF40>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2018, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'name_category'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 65, in get
+    .annotate(users=Subquery(User.objects.filter(categories='name_category'))) \
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1439, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1446, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'name_category'.
+2023-10-07 14:20:12,700 ERROR "GET /api/subs/ HTTP/1.1" 500 157459 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:21:58,458 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.FieldError'>, FieldError('Cannot resolve expression type, unknown output_field'), <traceback object at 0x0000027C0D01B540>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 394, in __iter__
+    self._fetch_all()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 204, in __iter__
+    for row in compiler.results_iter(
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in results_iter
+    results = self.execute_sql(
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1385, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 593, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 71, in pre_sql_setup
+    self.setup_query()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 62, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 305, in get_select
+    sql, params = col.select_format(self, sql, params)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\expressions.py", line 456, in select_format
+    if hasattr(self.output_field, "select_format"):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\expressions.py", line 298, in output_field
+    raise FieldError("Cannot resolve expression type, unknown output_field")
+django.core.exceptions.FieldError: Cannot resolve expression type, unknown output_field
+2023-10-07 14:21:58,480 ERROR "GET /api/subs/ HTTP/1.1" 500 164211 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:22:02,828 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.FieldError'>, FieldError('Cannot resolve expression type, unknown output_field'), <traceback object at 0x0000027C0D5712C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 394, in __iter__
+    self._fetch_all()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\query.py", line 204, in __iter__
+    for row in compiler.results_iter(
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1349, in results_iter
+    results = self.execute_sql(
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1385, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 593, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 71, in pre_sql_setup
+    self.setup_query()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 62, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\sql\compiler.py", line 305, in get_select
+    sql, params = col.select_format(self, sql, params)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\expressions.py", line 456, in select_format
+    if hasattr(self.output_field, "select_format"):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\db\models\expressions.py", line 298, in output_field
+    raise FieldError("Cannot resolve expression type, unknown output_field")
+django.core.exceptions.FieldError: Cannot resolve expression type, unknown output_field
+2023-10-07 14:22:02,845 ERROR "GET /api/subs/ HTTP/1.1" 500 164211 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:22:45,392 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'str' object has no attribute 'pk'"), <traceback object at 0x0000020675DDB980>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 273, in to_representation
+    return value.pk
+AttributeError: 'str' object has no attribute 'pk'
+2023-10-07 14:22:45,402 ERROR "GET /api/subs/ HTTP/1.1" 500 138511 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:22:47,471 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'str' object has no attribute 'pk'"), <traceback object at 0x0000020675C1EB00>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 273, in to_representation
+    return value.pk
+AttributeError: 'str' object has no attribute 'pk'
+2023-10-07 14:22:47,487 ERROR "GET /api/subs/ HTTP/1.1" 500 138511 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:23:02,217 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'str' object has no attribute 'pk'"), <traceback object at 0x000001336C6C96C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 273, in to_representation
+    return value.pk
+AttributeError: 'str' object has no attribute 'pk'
+2023-10-07 14:23:02,231 ERROR "GET /api/subs/ HTTP/1.1" 500 138494 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:23:03,570 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'str' object has no attribute 'pk'"), <traceback object at 0x000001336C937800>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 273, in to_representation
+    return value.pk
+AttributeError: 'str' object has no attribute 'pk'
+2023-10-07 14:23:03,570 ERROR "GET /api/subs/ HTTP/1.1" 500 138494 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 14:59:30,658 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("Got AttributeError when attempting to get a value for field `name_category` on serializer `CategorySerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `str` instance.\nOriginal exception text was: 'str' object has no attribute 'name_category'."), <traceback object at 0x000001533D53B240>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'str' object has no attribute 'name_category'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `name_category` on serializer `CategorySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `str` instance.
+Original exception text was: 'str' object has no attribute 'name_category'.
+2023-10-07 14:59:30,671 ERROR "GET /api/subs/ HTTP/1.1" 500 145065 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:01:05,211 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option."), <traceback object at 0x000001CD9229C380>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'users' was declared on serializer StaticSerializer, but has not been included in the 'fields' option.
+2023-10-07 15:01:05,225 ERROR "GET /api/subs/ HTTP/1.1" 500 147472 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:05:14,204 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."), <traceback object at 0x0000027EA165D940>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'subscribers'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."
+2023-10-07 15:05:14,220 ERROR "GET /api/subs/ HTTP/1.1" 500 146212 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:05:14,941 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."), <traceback object at 0x0000027EA1921D40>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'subscribers'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."
+2023-10-07 15:05:14,953 ERROR "GET /api/subs/ HTTP/1.1" 500 146212 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:06:30,760 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."), <traceback object at 0x000002232EF129C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 539, in get_attribute
+    relationship = get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'subscribers'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 560, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."
+2023-10-07 15:06:30,769 ERROR "GET /api/subs/ HTTP/1.1" 500 143335 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:06:32,071 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."), <traceback object at 0x000002232F1A1480>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 539, in get_attribute
+    relationship = get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'subscribers'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 560, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."
+2023-10-07 15:06:32,088 ERROR "GET /api/subs/ HTTP/1.1" 500 143335 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:14:17,244 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError("Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."), <traceback object at 0x00000270288BA3C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 539, in get_attribute
+    relationship = get_attribute(instance, self.source_attrs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+KeyError: 'subscribers'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 70, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 560, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `subscribers` on serializer `StaticSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'subscribers'."
+2023-10-07 15:14:17,262 ERROR "GET /api/subs/ HTTP/1.1" 500 143304 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:14:52,228 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x0000025611626640>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:14:52,324 ERROR "GET /api/subs/ HTTP/1.1" 500 134003 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:15:47,882 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x00000281A21F0440>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:15:47,898 ERROR "GET /api/subs/ HTTP/1.1" 500 135883 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:15:49,464 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x00000281A257D300>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:15:49,464 ERROR "GET /api/subs/ HTTP/1.1" 500 135883 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:15:50,497 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x00000281A25A6540>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:15:50,513 ERROR "GET /api/subs/ HTTP/1.1" 500 135883 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:16:22,004 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x0000015C92709340>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:16:22,016 ERROR "GET /api/subs/ HTTP/1.1" 500 136387 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:16:23,033 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x0000015C926A5D00>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:16:23,051 ERROR "GET /api/subs/ HTTP/1.1" 500 136387 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:16:23,210 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x0000015C9293DE80>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:16:23,218 ERROR "GET /api/subs/ HTTP/1.1" 500 136387 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:16:23,619 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x0000015C92640E40>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:16:23,631 ERROR "GET /api/subs/ HTTP/1.1" 500 136387 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:16:35,975 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x000002418CDBAB40>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:16:35,975 ERROR "GET /api/subs/ HTTP/1.1" 500 136259 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-10-07 15:16:36,784 ERROR Internal Server Error: /api/subs/ C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("'int' object is not iterable"), <traceback object at 0x000002418CFEF8C0>)
+Traceback (most recent call last):
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\NewsPaper\api\views.py", line 71, in get
+    return Response(serializer.data)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+TypeError: 'int' object is not iterable
+2023-10-07 15:16:36,801 ERROR "GET /api/subs/ HTTP/1.1" 500 136259 C:\Users\Asus\PycharmProjects\Django\NewsPaper1\venv\lib\site-packages\django\core\servers\basehttp.py None

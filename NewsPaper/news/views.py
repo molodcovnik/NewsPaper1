@@ -164,3 +164,13 @@ def unsubscribe(request, pk):
 #     model = Comment
 #     template_name = 'comment_create.html'
 #     success_url = reverse_lazy('post_list')
+
+# qs = Post.objects.values('category_post__name_category')
+#     .annotate(name=F('category_post__name_category'))
+#     .annotate(cnt=Count('id')).order_by('name')
+#     .values('name', 'cnt')
+
+
+# res = Category.objects.values('name_category')\
+#     .annotate(count=Count('subscribers__username'))
+#     .order_by('-count')

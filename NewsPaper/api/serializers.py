@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from news.models import Post, Author, PostCategory, Category
 
@@ -38,7 +39,10 @@ class PostSerializer(serializers.ModelSerializer):
                   'category_post',
                   'time_add']
 
-
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', )
 
 
 class PostCreateSerializer(serializers.ModelSerializer):
@@ -52,3 +56,12 @@ class PostCreateSerializer(serializers.ModelSerializer):
                   'category_post',
                   'time_add',]
 
+
+class StaticSerializer(serializers.ModelSerializer):
+    name_category = serializers.CharField()
+    count = serializers.IntegerField()
+
+
+    class Meta:
+        model = Category
+        fields = ('id', 'name_category', 'count', )

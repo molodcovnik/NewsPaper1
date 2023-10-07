@@ -1,9 +1,11 @@
 from django.contrib.auth.models import User
+from django.db.models import Count, F, Subquery
 from rest_framework import generics, status, permissions
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from .serializers import PostSerializer, CategorySerializer, PostCreateSerializer
+from .serializers import PostSerializer, CategorySerializer, PostCreateSerializer, StaticSerializer
 # AuthorSerializer, UserSerializer, CategorySerializer
 from news.models import Post, Author, PostCategory, Category
 
@@ -54,3 +56,15 @@ class PostCreateViewSet(generics.CreateAPIView):
 #         serializer.save(category=category)
 #         return Response(serializer.data, status=status.HTTP_201_CREATED)
 #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SubscribersStaticView(APIView):
+
+    def get(self, request, format=None):
+        category_list = Category.objects.all().values_list('pk', flat=True)
+        res = Category.objects.values('id', 'name_category') \
+            .annotate(count=Count('subscribers__username')) \
+            .order_by('-count')
+
+        serializer = StaticSerializer(res, many=True, )
+        return Response(serializer.data)
