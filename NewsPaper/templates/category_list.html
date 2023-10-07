@@ -39,7 +39,7 @@ Subscribe
             </tr>
             {% for post in category_news_list %}
                 <tr>
-                    <td><h6>{{post.header_post|censor}}</h6></td>
+                    <td><h6><a href="{% url 'post_detail' post.id %}">{{post.header_post|censor}}</a></h6></td>
                     <td>{% for category in post.category_post.all %}
                             <a href="{% url 'category_list' category.id %}"> {{category}}</a>
                         {% endfor %}</td>

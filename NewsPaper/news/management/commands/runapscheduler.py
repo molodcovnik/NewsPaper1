@@ -6,6 +6,7 @@ from apscheduler.triggers.cron import CronTrigger
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.core.management.base import BaseCommand
+
 from django.template.loader import render_to_string
 from django_apscheduler import util
 from django_apscheduler.jobstores import DjangoJobStore
@@ -14,6 +15,7 @@ from django_apscheduler.models import DjangoJobExecution
 from news.models import Post, PostCategory, Category, User
 
 logger = logging.getLogger(__name__)
+
 
 def my_job(): # не получается реализовать все одной функцией
     # Your job processing logic here...

@@ -1,11 +1,12 @@
 import logging
 import datetime
-
+from django.utils.translation import gettext as _
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import View
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic.edit import FormMixin
 from django.views.generic import (
@@ -20,12 +21,16 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 
 logger = logging.getLogger(__name__)
 
-# def index(request):
-#     logger.error('sa')
-#     posts = Post.objects.all()
-#
-#     return render(request, 'posts.html', context={'posts': posts})
 
+# class Index(View):
+#     def get(self, request):
+#         string = _('Hello world')
+#
+#         context = {
+#             'string': string
+#         }
+#
+#         return HttpResponse(render(request, 'index.html', context))
 class PostList(ListView):
     model = Post
     ordering = '-time_add'

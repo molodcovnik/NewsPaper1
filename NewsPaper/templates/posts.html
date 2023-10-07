@@ -1,13 +1,29 @@
 {% extends 'flatpages/default.html' %}
 
 {% load custom_filters %}
-
+{% load i18n %}
 {% block title %}
 Posts
 {% endblock title %}
 
 {% block content %}
-    <h1> Все новости </h1>
+<form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
+        <input type="hidden" name="next" value="{{ redirect_to }}">
+        {% get_current_language as LANGUAGE_CODE %}
+
+        <select name="language" id="">
+            {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
+            {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
+
+            {% for language in languages %} <!-- Итерируясь по списку, выводим их название на языке пользователя и код -->
+                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                    {{ language.name_local }} - {{ language.code }}
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="set">
+    </form>
+    <h1> {% trans "All news" %} </h1>
     <h2>Всего новостей: {{posts|length}}</h2>
     <hr>
 
@@ -41,7 +57,7 @@ Posts
             </tr>
             {% for post in posts %}
                 <tr>
-                    <td><h6>{{post.header_post|censor}}</h6></td>
+                    <td><h6><a href="{% url 'post_detail' post.id %}">{{post.header_post|censor}}</a></h6></td>
                     <td>{% for category in post.category_post.all %}
                             <a href="{% url 'category_list' category.id %}"> {{category}}</a>
                         {% endfor %}</td>
